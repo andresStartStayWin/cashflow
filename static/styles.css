@@ -1,0 +1,106 @@
+        /*===== GOOGLE FONTS =====*/
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+        /*===== VARIABLES CSS =====*/
+        :root {
+            --header-height: 3rem;
+            --font-semi: 600;
+            --hue-color: 224; /* Color azul */
+            --first-color: hsl(var(--hue-color), 89%, 60%);
+            --second-color: hsl(var(--hue-color), 56%, 12%);
+            --body-font: "Poppins", sans-serif;
+            --big-font-size: 2rem;
+            --h2-font-size: 1.25rem;
+            --normal-font-size: .938rem;
+            --smaller-font-size: .75rem;
+            --mb-2: 1rem;
+            --mb-4: 2rem;
+            --mb-5: 2.5rem;
+            --mb-6: 3rem;
+            --z-back: -10;
+            --z-fixed: 100;
+        }
+
+        body {
+            font-family: var(--body-font);
+            margin: 40px;
+            color: var(--second-color);
+            background-color: #f0f2f5; /* Fondo claro */
+        }
+
+        h2.section-title {
+            font-size: var(--big-font-size); /* Título principal más grande */
+            color: var(--first-color); /* Color principal */
+            margin-bottom: var(--mb-2); /* Espacio reducido entre el título y el formulario */
+        }
+
+        /* Estilos para el formulario */
+        form.contact__form {
+ 
+            gap: 20px; /* Espacio entre los campos y los botones */
+        }
+
+        /* Estilo para los campos de entrada */
+        .form-label {
+            font-weight: var(--font-semi);
+           
+            margin-bottom: 5px;
+        }
+
+        .contact__input {
+            width: 60%;
+            padding: 12px;
+            
+            border: 2px solid var(--first-color); /* Borde con color principal */
+            border-radius: 25px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para profundidad */
+        }
+
+        /* Estilos para los botones */
+        .button {
+            background-color: var(--first-color);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px; /* Bordes redondeados */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: hsl(var(--hue-color), 89%, 65%); /* Color ligeramente más claro al pasar el mouse */
+            transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+        }
+
+        .error {
+            color: red;
+            font-size: var(--normal-font-size);
+            margin-top: var(--mb-2);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            padding-left: 20px; /* Espacio adicional para los elementos de la lista */
+        }
+
+        /* Estilos para el log de acciones */
+        .log {
+            margin-top: var(--mb-4);
+            border-top: 1px solid #ccc;
+            padding-top: var(--mb-2);
+        }
+
+        .log h3.section-title {
+            font-size: var(--normal-font-size);
+            color: var(--second-color);
+            margin-bottom: var(--mb-2);
+        }
+
+        .log ul {
+            padding-left: var(--mb-2);
+        }

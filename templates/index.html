@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seguimiento de Cashflow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="l-header">
+        <h1 class="nav__logo">Seguimiento de Cashflow</h1>
+    </div>
+    
+    <div class="section bd-grid">
+        <form method="post" class="contact__form">
+            <label>Fecha:</label>
+            <input class="contact__input" type="date" name="fecha"><br>
+            <label>Tipo:</label>
+            <input class="contact__input" type="text" name="tipo"><br>
+            <label>Monto:</label>
+            <input class="contact__input" type="number" step="0.01" name="monto"><br>
+            <label>Frecuencia:</label>
+            <select class="contact__input" name="frecuencia">
+                <option value="única">Única</option>
+                <option value="diaria">Diaria</option>
+                <option value="semanal">Semanal</option>
+                <option value="mensual">Mensual</option>
+                <option value="anual">Anual</option>
+            </select><br>
+            <input class="button" type="submit" value="Agregar Transacción">
+        </form>
+    </div>
+
+    <div class="section bd-grid">
+        <h2 class="section-title">Sumatorias</h2>
+        <p>Próximos 7 días: ${{ sumatorias['7_dias'] }}</p>
+        <p>Dentro de 1 mes: ${{ sumatorias['1_mes'] }}</p>
+        <p>Dentro de 3 meses: ${{ sumatorias['3_meses'] }}</p>
+        <p>Dentro de 6 meses: ${{ sumatorias['6_meses'] }}</p>
+        <p>Dentro de 9 meses: ${{ sumatorias['9_meses'] }}</p>
+        <p>Dentro de 1 año: ${{ sumatorias['1_año'] }}</p>
+    </div>
+
+    <div class="section bd-grid">
+        <h2 class="section-title">Transacciones</h2>
+        {% for transaccion in transacciones|reverse %}
+            <p>{{ transaccion.fecha.date() }} - {{ transaccion.tipo }}: ${{ transaccion.monto }} - {{ transaccion.frecuencia }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
